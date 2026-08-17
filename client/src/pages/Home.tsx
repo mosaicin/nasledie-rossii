@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import GalleryExplorer from "@/components/GalleryExplorer";
 import { ArrowDown, ArrowUpRight, CircleDot, Menu, X } from "lucide-react";
 
 /**
@@ -23,6 +25,13 @@ const copy = {
 } as const;
 
 export default function Home() {
+  // The useAuth hook provides authentication state.
+  // To implement login/logout, call logout(), or start login from an event
+  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
+  // startLogin() during render (no href={startLogin()}) — it mints a one-time
+  // nonce cookie and must run only at the moment of navigation.
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [lang, setLang] = useState<Lang>(() => (localStorage.getItem("heritage-language") as Lang) || "ru");
   const [showPicker, setShowPicker] = useState(() => !localStorage.getItem("heritage-language"));
   const [era, setEra] = useState<"empire" | "ussr">("empire");
@@ -42,7 +51,7 @@ export default function Home() {
     <section className="chronology" id="chronology"><div className="section-index"><span>01</span><span className="vertical-label">{c.chronology}</span></div><div className="chronology-main"><div className="section-heading"><div><div className="eyebrow">{c.erasKicker}</div><h2>{c.erasTitle[0]}<br /><em>{c.erasTitle[1]}</em></h2></div><p>{c.erasIntro}</p></div><div className="timeline-spine" aria-hidden="true"><span>1917</span><i></i><span>1960</span><i></i><span>1991</span></div><div className="era-switcher" role="tablist"><button role="tab" aria-selected={era === "empire"} className={era === "empire" ? "era-tab active" : "era-tab"} onClick={() => setEra("empire")}><span className="era-dot" />{c.empire}<small>do 1917</small></button><button role="tab" aria-selected={era === "ussr"} className={era === "ussr" ? "era-tab active" : "era-tab"} onClick={() => setEra("ussr")}><span className="era-dot" />{c.ussr}<small>1917—1991</small></button></div><article className="era-card"><div className="era-card-image" style={{ backgroundImage: `url(${activeImage})` }} /><div className="era-card-content"><div className="eyebrow">{era === "empire" ? c.origins : c.system}</div><h3>{activeTitle}</h3><p>{activeText}</p><div className="stat-line"><span className="stat-number">{era === "ussr" ? "30K+" : "XIX"}</span><span>{activeStat}</span></div></div><div className="era-card-arrow"><ArrowUpRight size={25} /></div></article></div></section>
     <section className="document-section" id="document"><div className="document-aside"><div className="document-label">{c.document}</div><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="document-seal" /><div className="document-year">1960</div><div className="document-line" /></div><div className="document-body"><div className="eyebrow">{c.resolution}</div><h2>{c.docTitle[0]}<br /><em>{c.docTitle[1]}</em></h2><blockquote>{c.quote}</blockquote><div className="document-grid"><div><span className="mono">01 / {c.facts[0]}</span><p>{c.facts[1]}</p></div><div><span className="mono">02 / {c.facts[2]}</span><p>{c.facts[3]}</p></div><div><span className="mono">03 / {c.facts[4]}</span><p>{c.facts[5]}</p></div></div><a href="https://docs.cntd.ru/document/9012089" target="_blank" rel="noreferrer" className="source-link">{c.readDoc} <ArrowUpRight size={15} /></a></div></section>
     <section className="numbers-section"><div className="eyebrow">{c.numbersKicker}</div><div className="big-number">30<span>тыс.</span></div><p>{c.numbersText}</p><div className="number-foot"><span>Более 2 000</span><span>{c.repairs}</span><span>Около 700</span><span>{c.restored}</span></div></section>
-    <section className="gallery-section" id="gallery"><div className="gallery-heading"><div><div className="eyebrow">{c.galleryKicker}</div><h2>{c.galleryTitle[0]}<br /><em>{c.galleryTitle[1]}</em></h2></div><p>{c.galleryIntro}</p></div><div className="gallery-grid">{photos.map((photo, index) => <figure key={photo.title.ru} className={index === 0 ? "photo-card photo-large" : "photo-card"}><div className="photo-image" style={{ backgroundImage: `url(${photo.src})` }} /><figcaption><span>{photo.note[lang]}</span><strong>{photo.title[lang]}</strong><small>{photo.source}</small></figcaption></figure>)}</div></section>
+    <GalleryExplorer lang={lang} />
     <footer className="footer"><div className="footer-brand"><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="brand-mark" /><span><b>Наследие</b><small>России</small></span></div><p>{c.footer}</p><div className="footer-meta"><span>© 2026 / РЕДАКЦИОННЫЙ ПРОЕКТ</span><span>{c.footerMeta}</span></div></footer>
   </main>;
 }

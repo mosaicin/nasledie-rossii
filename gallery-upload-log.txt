@@ -1,0 +1,232 @@
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IM114копия.webp (size: 127136 bytes)
+[FAILED] /home/ubuntu/webdev-static-assets/nasledie-gallery/IM114копия.webp: failed to upload to private storage: forge presign/put failed (400 Bad Request): {"error":"invalid argument, file path must be ASCII"}
+Error: some files failed to upload
+Usage:
+  manus-upload-file [filename] [filename2] ... [flags]
+
+Examples:
+  manus-upload-file path/to/image.png
+  manus-upload-file file1.png file2.jpg file3.pdf
+  manus-upload-file --webdev path/to/image.png
+  manus-upload-file --setup-storage-proxy
+
+Flags:
+  -h, --help                  help for manus-upload-file
+      --setup-storage-proxy   Print storage proxy setup guide for legacy projects
+  -v, --version               version for manus-upload-file
+      --webdev                Upload via forge API so files follow webdev project lifecycle
+
+FAILED IM114копия.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20221211-WA0000.webp (size: 129856 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20221211-WA0000_ffa7f279.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20230830-WA0000.webp (size: 257870 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20230830-WA0000_67ba2bfb.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20230831-WA0000.webp (size: 145416 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20230831-WA0000_818ee8af.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20230906-WA0000.webp (size: 102164 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20230906-WA0000_974f637f.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20230914-WA0000.webp (size: 87782 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20230914-WA0000_86071eb3.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG-20230914-WA0002.webp (size: 122200 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG-20230914-WA0002_3db2b5d0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0297.webp (size: 134216 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0297_6775dec2.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0301.webp (size: 222192 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0301_72ae850b.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0302.webp (size: 139876 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0302_e6aa9ebf.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0530.webp (size: 93942 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0530_51ec6e9b.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0673.webp (size: 112120 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0673_291e9889.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_0676.webp (size: 143178 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_0676_74270cf7.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1057.webp (size: 173670 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1057_ff007d98.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1217.webp (size: 315200 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1217_a6311537.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1229.webp (size: 245950 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1229_752a72d0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1234.webp (size: 109920 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1234_94413579.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1506.webp (size: 88856 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1506_3ed01374.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1570.webp (size: 253974 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1570_02ada950.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1619.webp (size: 158098 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1619_7b7dd21d.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1621.webp (size: 126188 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1621_f52e4b5a.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1623.webp (size: 86944 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1623_08c7d80c.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_1678.webp (size: 182618 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_1678_58dad04c.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_20220920_165346.webp (size: 259192 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_20220920_165346_0fe2b8ac.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_20221109_122622.webp (size: 372118 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_20221109_122622_c50acef7.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_2043.webp (size: 206704 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_2043_b548a224.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_2328.webp (size: 52080 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_2328_a2e54a33.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_2994.webp (size: 70436 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_2994_e23543ac.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3054.webp (size: 457712 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3054_d5d93b6e.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3154.webp (size: 268764 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3154_31f67613.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3168.webp (size: 119184 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3168_f4ddfe5d.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3581(1).webp (size: 127282 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3581(1)_9c06e765.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3582.webp (size: 104024 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3582_3b541656.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_3583.webp (size: 136626 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_3583_1a56935e.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_4099.webp (size: 111780 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_4099_073353fb.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_4274.webp (size: 177558 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_4274_16603050.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_4345.webp (size: 123072 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_4345_543b2a9a.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_4434.webp (size: 162606 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_4434_8310e764.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_4467.webp (size: 165914 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_4467_e6e45863.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5118.webp (size: 70060 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5118_57ff383d.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5161.webp (size: 55288 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5161_22fc6c2c.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5164.webp (size: 77304 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5164_3dd6639e.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5167.webp (size: 133884 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5167_4726cd22.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5184.webp (size: 203550 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5184_35dafa78.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5185.webp (size: 222752 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5185_13b9047a.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5198.webp (size: 133130 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5198_4ef7d465.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5199.webp (size: 156934 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5199_28de4f46.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5206.webp (size: 165064 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5206_f1e0a62b.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5605.webp (size: 152780 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5605_5179aca9.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_5790.webp (size: 107828 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_5790_75f8d5b2.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_6648.webp (size: 297318 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_6648_a0ae73d2.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_6662.webp (size: 404528 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_6662_3489aad8.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_6739.webp (size: 138438 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_6739_fafcf792.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_6743.webp (size: 296306 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_6743_33bf33d5.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_6915.webp (size: 40694 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_6915_5a8e7c07.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_7060.webp (size: 169120 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_7060_dc728ea4.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_7111.webp (size: 65494 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_7111_f1d2fabc.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_7548.PNG (size: 810975 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_7548_244feffd.PNG
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8191.webp (size: 135736 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8191_510036d9.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8457.webp (size: 242214 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8457_95144cd0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8548.webp (size: 84058 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8548_d496ad26.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8646.webp (size: 253476 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8646_6df4a005.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8930.webp (size: 112362 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8930_781a5803.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_8941.webp (size: 113990 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_8941_a9b478e5.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9026.webp (size: 227614 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9026_cbad1730.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9032.webp (size: 154866 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9032_b73a583e.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9145.webp (size: 112880 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9145_259c0267.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9215.webp (size: 136582 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9215_34bb2197.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9275.webp (size: 82914 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9275_00992ce8.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/IMG_9292.webp (size: 92464 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/IMG_9292_2b0af730.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/ff037bb301984b59eee677e9b4b1f4bf1a992790.webp (size: 362970 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/ff037bb301984b59eee677e9b4b1f4bf1a992790_0f434146.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/nasledie-gallery/image(64).jpg (size: 407241 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/image(64)_d4b975c7.jpg
