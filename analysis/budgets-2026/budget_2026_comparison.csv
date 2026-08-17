@@ -1,0 +1,19 @@
+region,income_bn,expense_bn,population,expense_per_capita_k,transfers_proxy_bn
+Russia,40283.3,44069.7,146028325,301.8,0.0
+Moscow,5937.4,6385.0,13258262,481.6,0.0
+St Petersburg,1461.8,1650.6,5645943,292.3,0.0
+Moscow Oblast,1309.3,1384.7,8766594,157.9,0.0
+Tatarstan,552.2,566.1,4016571,140.9,0.0
+Krasnodar Krai,547.9,552.1,2837374,194.6,0.0
+Dagestan,224.0,227.0,3258993,69.7,0.0
+Stavropol Krai,211.5,221.6,2883494,76.8,0.0
+Chechnya,148.6,155.4,1575819,98.6,0.0
+Ingushetia,42.4,43.3,534219,81.1,0.0
+Kabardino-Balkaria,72.3,74.8,908090,82.4,0.0
+North Ossetia,54.2,55.5,678454,81.7,0.0
+Karachay-Cherkessia,42.8,43.9,468531,93.7,0.0
+Tuva,63.9,65.4,338341,193.4,0.0
+Chukotka,60.9,64.1,47902,1337.9,0.0
+Sverdlovsk Oblast,507.0,539.0,4218204,127.8,0.0
+Rostov Oblast,328.2,355.1,4135018,85.9,0.0
+Bashkortostan,316.2,338.7,4046094,83.7,0.0
