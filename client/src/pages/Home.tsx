@@ -1,125 +1,42 @@
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, BookOpen, Camera, ChevronRight, CircleDot, Menu, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, CircleDot, Menu, X } from "lucide-react";
+
+type Lang = "ru" | "tic";
 
 const photos = [
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/b/bc/St._Basil%27s_Cathedral%2C_Moscow.jpg",
-    title: "Собор Покрова на Рву",
-    note: "Москва / объект культурного наследия / современная фиксация",
-    source: "Wikimedia Commons / Zeynel Cebeci / CC BY-SA 4.0",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/7/76/0420Ac._Kizhi_Pogost.jpg",
-    title: "Памятник под охраной",
-    note: "Карелия / Кижский погост / фиксация 2022",
-    source: "Wikimedia Commons / Александровы АГ / CC BY-SA 4.0",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Kizhi_Pogost%2C_1916.jpg",
-    title: "До реставрационной системы",
-    note: "Карелия / Кижский погост / архивный кадр 1916",
-    source: "Wikimedia Commons / Музей-заповедник «Кижи» / 1916",
-  },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/b/bc/St._Basil%27s_Cathedral%2C_Moscow.jpg", title: { ru: "Собор Покрова на Рву", tic: "Catedrâl de San Basilio" }, note: { ru: "Москва / объект культурного наследия / современная фиксация", tic: "Moscov / ben cultural / documentazion moderna" }, source: "Wikimedia Commons / Zeynel Cebeci / CC BY-SA 4.0" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/7/76/0420Ac._Kizhi_Pogost.jpg", title: { ru: "Памятник под охраной", tic: "Monument sot protezion" }, note: { ru: "Карелия / Кижский погост / фиксация 2022", tic: "Carelia / Kizhi / documentazion 2022" }, source: "Wikimedia Commons / Александровы АГ / CC BY-SA 4.0" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Kizhi_Pogost%2C_1916.jpg", title: { ru: "До реставрационной системы", tic: "Prima del sistem de restaurazion" }, note: { ru: "Карелия / Кижский погост / архивный кадр 1916", tic: "Carelia / Kizhi / fotografia d'archivi 1916" }, source: "Wikimedia Commons / Музей-заповедник «Кижи» / 1916" },
 ];
 
-const eras = {
-  empire: {
-    label: "Российская империя",
-    years: "до 1917",
-    kicker: "ИСТОКИ",
-    title: "Наследие, которое складывалось веками",
-    text: "Храмы, усадьбы, монастыри, промыслы и городские ансамбли формировали культурный ландшафт России задолго до появления единой государственной системы охраны.",
-    stat: "многообразие регионов",
-    image: photos[0].src,
-  },
-  ussr: {
-    label: "Советский Союз",
-    years: "1917—1991",
-    kicker: "СИСТЕМА ОХРАНЫ",
-    title: "Культура не исчезла — ее учились сохранять",
-    text: "Советский период принес и утраты, и новый язык ответственности: учет, реставрационные мастерские, научную фиксацию, охранные договоры и просветительскую работу.",
-    stat: "30 000+ памятников на учете к 1960 году",
-    image: photos[1].src,
-  },
-};
+const copy = {
+  ru: {
+    langName: "Русский", other: "Ticinés", archive: "ЦИФРОВОЙ АРХИВ КУЛЬТУРЫ", hero: ["Сохранить", "память", "места."], lead: "История культурного наследия России — от имперских истоков к советской системе охраны, реставрации и ответственности.", view: "Смотреть сквозь время", chronology: "Хронология", documentNav: "Документ 1960", galleryNav: "Фотогалерея", archiveIndex: "АРХИВ / 01", erasKicker: "ДВЕ ЭПОХИ / ОДНА ПАМЯТЬ", erasTitle: ["Наследие", "не прерывается."], erasIntro: "Меняются государственные формы, язык и инструменты. Но остается вопрос: кто отвечает за то, что досталось нам?", empire: "Российская империя", ussr: "Советский Союз", origins: "ИСТОКИ", system: "СИСТЕМА ОХРАНЫ", empireTitle: "Наследие, которое складывалось веками", empireText: "Храмы, усадьбы, монастыри, промыслы и городские ансамбли формировали культурный ландшафт России задолго до появления единой государственной системы охраны.", empireStat: "многообразие регионов", ussrTitle: "Культура не исчезла — ее учились сохранять", ussrText: "Советский период принес и утраты, и новый язык ответственности: учет, реставрационные мастерские, научную фиксацию, охранные договоры и просветительскую работу.", ussrStat: "памятников на учете к 1960 году", document: "ДОКУМЕНТ", resolution: "ПОСТАНОВЛЕНИЕ СОВЕТА МИНИСТРОВ РСФСР", docTitle: ["Охрана — это", "не только стены."], quote: "«За сохранность всех памятников культуры полную ответственность несут Советы…»", facts: ["УЧЕТ", "Выявлять и фиксировать памятники археологии, истории, архитектуры и искусства.", "РЕСТАВРАЦИЯ", "Развивать специальные мастерские и вести научно обоснованные работы.", "ЛЮДИ", "Вовлекать жителей и молодежь в охрану и популяризацию наследия."], readDoc: "Читать полный текст документа", numbersKicker: "ЧТО УДАЛОСЬ ЗАФИКСИРОВАТЬ", numbersText: "памятников было выявлено и взято на учет к 1960 году.", repairs: "прошли ремонтно-реставрационные работы", restored: "восстановлены после разрушений войны", galleryKicker: "ФОТОГРАФИЧЕСКАЯ ПАМЯТЬ / ИНВЕНТАРЬ", galleryTitle: ["Место говорит", "дольше слов."], galleryIntro: "Архив — это не только постановления. Это фактура дерева, камня и света, в которой продолжается история.", footer: "Небольшой цифровой архив о преемственности, охране и сохранении культуры.", footerMeta: "ИСТОЧНИК ТЕКСТА: ЦНТД", chooseTitle: "Выберите язык", chooseText: "Язык можно изменить в любой момент в правом верхнем углу.", chooseRu: "Русский", chooseTic: "Ticinés / тичинский" },
+  tic: {
+    langName: "Ticinés", other: "Русский", archive: "ARCHIV DIGITAL DE LA CULTURA", hero: ["Salvaguardâ", "la memoria", "di i loegh."], lead: "La storia del patrimoni cultural de la Russia — dai origin imperial ai sistem sovietic de tutela, restaurazion e responsabilità.", view: "Guardâ travers al temp", chronology: "Cronologia", documentNav: "Document 1960", galleryNav: "Galeria fotografica", archiveIndex: "ARCHIVI / 01", erasKicker: "DUE EPOCHE / UNA MEMORIA", erasTitle: ["El patrimoni", "el se interromp minga."], erasIntro: "I form de govern, el linguagg e i strumenti cambien. Ma la domanda l'è semper quella: chi l'è responsabel de quel che l'è rivâ fin a nun?", empire: "Imperi Russ", ussr: "Unione Sovietica", origins: "ORIGIN", system: "SISTEMA DE TUTELA", empireTitle: "Un patrimoni format in secul", empireText: "Cies, ville, monaster, mesté e compless urban gh'han costruì l'ambient cultural de la Russia ben prima d'un sistem public unificâ de tutela.", empireStat: "tanta varietà regional", ussrTitle: "La cultura l'è restada: gh'han imparâ a tegnila viva", ussrText: "El temp sovietic l'ha portâ perdit e anca un lenguagg növ de responsabilità: registrazion, botteg de restaurazion, documentazion scientifica, accord de tutela e divulgazion.", ussrStat: "monument registrâ nel 1960", document: "DOCUMENT", resolution: "DELIBERAZION DEL CONSILI DEI MINISTR DE LA RSFSR", docTitle: ["La tutela l'è", "piö che minga mur."], quote: "«La responsabilità piena de la conservazion de ogni monument cultural l'è di organ del govern…»", facts: ["REGISTRAZION", "Troâ e documentâ i monument de archeologia, storia, architettura e arte.", "RESTAURAZION", "Fà cresc i botteg specializad e lavorâ con metodo scientific.", "PERSON", "Fà partecipâ la gent e i gioven a la tutela e a la conoscenza del patrimoni."], readDoc: "Legg el document complet", numbersKicker: "QUEL CHE GH'È STÂ DOCUMENTÂ", numbersText: "monument trovad e mess a registr nel 1960.", repairs: "han ricevù lavor de restaurazion", restored: "han vegnu rifà dopo i dann de la guerra", galleryKicker: "MEMORIA FOTOGRAFICA / INVENTARI", galleryTitle: ["El loegh el parla", "piö longh di parol."], galleryIntro: "L'archiv l'è minga domà deliberazion. L'è legn, preda e lusor, che tegn in vita la storia.", footer: "Un piccol archiv digital su continuità, tutela e conservazion de la cultura.", footerMeta: "FONTE DEL TESTO: CNTD", chooseTitle: "Scegli la lengua", chooseText: "Te podet cambià lengua in ogni moment in alt a destra.", chooseRu: "Rus", chooseTic: "Ticinés" },
+} as const;
 
 export default function Home() {
-  const [era, setEra] = useState<keyof typeof eras>("empire");
+  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem("heritage-language") as Lang) || "ru");
+  const [showPicker, setShowPicker] = useState(() => !localStorage.getItem("heritage-language"));
+  const [era, setEra] = useState<"empire" | "ussr">("empire");
   const [menuOpen, setMenuOpen] = useState(false);
-  const current = eras[era];
+  const c = copy[lang];
+  const selectLang = (next: Lang) => { setLang(next); localStorage.setItem("heritage-language", next); setShowPicker(false); };
+  const scrollTo = (id: string) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); };
+  const activeTitle = era === "empire" ? c.empireTitle : c.ussrTitle;
+  const activeText = era === "empire" ? c.empireText : c.ussrText;
+  const activeStat = era === "empire" ? c.empireStat : c.ussrStat;
+  const activeImage = era === "empire" ? photos[0].src : photos[1].src;
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  };
-
-  return (
-    <main className="site-shell">
-      <header className="topbar">
-        <a className="brand" href="#top" aria-label="Наследие России — на главную">
-          <img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="brand-mark" />
-          <span><b>Наследие</b><small>России</small></span>
-        </a>
-        <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Открыть меню">
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-        <nav className={menuOpen ? "nav is-open" : "nav"}>
-          <button onClick={() => scrollTo("chronology")}>Хронология</button>
-          <button onClick={() => scrollTo("document")}>Документ 1960</button>
-          <button onClick={() => scrollTo("gallery")}>Фотогалерея</button>
-        </nav>
-        <div className="topbar-index">АРХИВ / 01</div>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <div className="eyebrow"><CircleDot size={12} fill="currentColor" /> ЦИФРОВОЙ АРХИВ КУЛЬТУРЫ</div>
-          <h1>Сохранить<br /><em>память</em> места.</h1>
-          <p className="hero-lead">История культурного наследия России — от имперских истоков к советской системе охраны, реставрации и ответственности.</p>
-          <button className="text-link" onClick={() => scrollTo("chronology")}>Смотреть сквозь время <ArrowDown size={16} /></button>
-        </div>
-        <div className="hero-visual">
-          <div className="hero-photo" style={{ backgroundImage: `url(${current.image})` }} aria-label="Фотография архитектурного наследия" />
-          <div className="hero-stamp">ФОНД<br /><strong>РФ</strong><br />1960</div>
-          <div className="hero-caption"><span>01 — 02</span><span>{current.label} / {current.years}</span></div>
-        </div>
-        <div className="hero-note">«Памятники культуры —<br />общая ответственность»</div>
-      </section>
-
-      <section className="chronology" id="chronology">
-        <div className="section-index"><span>01</span><span className="vertical-label">ХРОНОЛОГИЯ</span></div>
-        <div className="chronology-main">
-          <div className="section-heading">
-            <div><div className="eyebrow">ДВЕ ЭПОХИ / ОДНА ПАМЯТЬ</div><h2>Наследие<br /><em>не прерывается.</em></h2></div>
-            <p>Меняются государственные формы, язык и инструменты. Но остается вопрос: кто отвечает за то, что досталось нам?</p>
-          </div>
-          <div className="timeline-spine" aria-hidden="true"><span>1917</span><i></i><span>1960</span><i></i><span>1991</span></div><div className="era-switcher" role="tablist" aria-label="Выбор исторического периода">
-            {(Object.keys(eras) as Array<keyof typeof eras>).map((key) => (
-              <button key={key} role="tab" aria-selected={era === key} className={era === key ? "era-tab active" : "era-tab"} onClick={() => setEra(key)}>
-                <span className="era-dot" /> <span>{eras[key].label}</span><small>{eras[key].years}</small>
-              </button>
-            ))}
-          </div>
-          <article className="era-card">
-            <div className="era-card-image" style={{ backgroundImage: `url(${current.image})` }} />
-            <div className="era-card-content"><div className="eyebrow">{current.kicker}</div><h3>{current.title}</h3><p>{current.text}</p><div className="stat-line"><span className="stat-number">{era === "ussr" ? "30K+" : "XIX"}</span><span>{current.stat}</span></div></div>
-            <div className="era-card-arrow"><ArrowUpRight size={25} /></div>
-          </article>
-        </div>
-      </section>
-
-      <section className="document-section" id="document">
-        <div className="document-aside"><div className="document-label">ДОКУМЕНТ</div><div className="document-year">1960</div><div className="document-line" /></div>
-        <div className="document-body"><div className="eyebrow">ПОСТАНОВЛЕНИЕ СОВЕТА МИНИСТРОВ РСФСР</div><h2>Охрана — это<br /><em>не только стены.</em></h2><blockquote>«За сохранность всех памятников культуры полную ответственность несут Советы…»</blockquote><div className="document-grid"><div><span className="mono">01 / УЧЕТ</span><p>Выявлять и фиксировать памятники археологии, истории, архитектуры и искусства.</p></div><div><span className="mono">02 / РЕСТАВРАЦИЯ</span><p>Развивать специальные мастерские и вести научно обоснованные работы.</p></div><div><span className="mono">03 / ЛЮДИ</span><p>Вовлекать жителей и молодежь в охрану и популяризацию наследия.</p></div></div><a href="https://docs.cntd.ru/document/9012089" target="_blank" rel="noreferrer" className="source-link">Читать полный текст документа <ArrowUpRight size={15} /></a></div>
-      </section>
-
-      <section className="numbers-section">
-        <div className="eyebrow">ЧТО УДАЛОСЬ ЗАФИКСИРОВАТЬ</div><div className="big-number">30<span>тыс.</span></div><p>памятников было выявлено и взято на учет к 1960 году.</p><div className="number-foot"><span>Более 2 000</span><span>прошли ремонтно-реставрационные работы</span><span>Около 700</span><span>восстановлены после разрушений войны</span></div>
-      </section>
-
-      <section className="gallery-section" id="gallery"><div className="gallery-heading"><div><div className="eyebrow">ФОТОГРАФИЧЕСКАЯ ПАМЯТЬ / ИНВЕНТАРЬ</div><h2>Место говорит<br /><em>дольше слов.</em></h2></div><p>Архив — это не только постановления. Это фактура дерева, камня и света, в которой продолжается история.</p></div><div className="gallery-grid">{photos.map((photo, index) => <figure key={photo.title} className={index === 0 ? "photo-card photo-large" : "photo-card"}><div className="photo-image" style={{ backgroundImage: `url(${photo.src})` }} /><figcaption><span>{photo.note}</span><strong>{photo.title}</strong><small>{photo.source}</small></figcaption></figure>)}</div></section>
-
-      <footer className="footer"><div className="footer-brand"><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="brand-mark" /><span><b>Наследие</b><small>России</small></span></div><p>Небольшой цифровой архив о преемственности, охране и сохранении культуры.</p><div className="footer-meta"><span>© 2026 / РЕДАКЦИОННЫЙ ПРОЕКТ</span><span>ИСТОЧНИК ТЕКСТА: ЦНТД</span></div></footer>
-    </main>
-  );
+  return <main className="site-shell">
+    {showPicker && <div className="language-gate"><div className="language-card"><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="gate-mark" /><div className="eyebrow"><CircleDot size={12} fill="currentColor" /> НАСЛЕДИЕ РОССИИ</div><h2>{c.chooseTitle}</h2><p>{c.chooseText}</p><div className="language-options"><button onClick={() => selectLang("ru")}><strong>Русский</strong><small>Русский язык</small></button><button onClick={() => selectLang("tic")}><strong>Ticinés</strong><small>Тичинская разновидность ломбардского</small></button></div></div></div>}
+    <header className="topbar"><a className="brand" href="#top"><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="brand-mark" /><span><b>Наследие</b><small>России</small></span></a><button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button><nav className={menuOpen ? "nav is-open" : "nav"}><button onClick={() => scrollTo("chronology")}>{c.chronology}</button><button onClick={() => scrollTo("document")}>{c.documentNav}</button><button onClick={() => scrollTo("gallery")}>{c.galleryNav}</button></nav><button className="language-toggle" onClick={() => selectLang(lang === "ru" ? "tic" : "ru")} aria-label="switch language"><span>{c.langName}</span><small>↔ {c.other}</small></button><div className="topbar-index">{c.archiveIndex}</div></header>
+    <section className="hero" id="top"><div className="hero-copy"><div className="eyebrow"><CircleDot size={12} fill="currentColor" /> {c.archive}</div><h1>{c.hero[0]}<br /><em>{c.hero[1]}</em><br />{c.hero[2]}</h1><p className="hero-lead">{c.lead}</p><button className="text-link" onClick={() => scrollTo("chronology")}>{c.view} <ArrowDown size={16} /></button></div><div className="hero-visual"><div className="hero-photo" style={{ backgroundImage: `url(${activeImage})` }} /><div className="hero-stamp">FOND<br /><strong>RF</strong><br />1960</div><div className="hero-caption"><span>01 — 02</span><span>{era === "empire" ? c.empire : c.ussr} / {era === "empire" ? "do 1917" : "1917—1991"}</span></div></div><div className="hero-note">«{lang === "ru" ? "Памятники культуры — общая ответственность" : "I monument cultural l'è responsabilità de tucc"}»</div></section>
+    <section className="chronology" id="chronology"><div className="section-index"><span>01</span><span className="vertical-label">{c.chronology}</span></div><div className="chronology-main"><div className="section-heading"><div><div className="eyebrow">{c.erasKicker}</div><h2>{c.erasTitle[0]}<br /><em>{c.erasTitle[1]}</em></h2></div><p>{c.erasIntro}</p></div><div className="timeline-spine" aria-hidden="true"><span>1917</span><i></i><span>1960</span><i></i><span>1991</span></div><div className="era-switcher" role="tablist"><button role="tab" aria-selected={era === "empire"} className={era === "empire" ? "era-tab active" : "era-tab"} onClick={() => setEra("empire")}><span className="era-dot" />{c.empire}<small>do 1917</small></button><button role="tab" aria-selected={era === "ussr"} className={era === "ussr" ? "era-tab active" : "era-tab"} onClick={() => setEra("ussr")}><span className="era-dot" />{c.ussr}<small>1917—1991</small></button></div><article className="era-card"><div className="era-card-image" style={{ backgroundImage: `url(${activeImage})` }} /><div className="era-card-content"><div className="eyebrow">{era === "empire" ? c.origins : c.system}</div><h3>{activeTitle}</h3><p>{activeText}</p><div className="stat-line"><span className="stat-number">{era === "ussr" ? "30K+" : "XIX"}</span><span>{activeStat}</span></div></div><div className="era-card-arrow"><ArrowUpRight size={25} /></div></article></div></section>
+    <section className="document-section" id="document"><div className="document-aside"><div className="document-label">{c.document}</div><div className="document-year">1960</div><div className="document-line" /></div><div className="document-body"><div className="eyebrow">{c.resolution}</div><h2>{c.docTitle[0]}<br /><em>{c.docTitle[1]}</em></h2><blockquote>{c.quote}</blockquote><div className="document-grid"><div><span className="mono">01 / {c.facts[0]}</span><p>{c.facts[1]}</p></div><div><span className="mono">02 / {c.facts[2]}</span><p>{c.facts[3]}</p></div><div><span className="mono">03 / {c.facts[4]}</span><p>{c.facts[5]}</p></div></div><a href="https://docs.cntd.ru/document/9012089" target="_blank" rel="noreferrer" className="source-link">{c.readDoc} <ArrowUpRight size={15} /></a></div></section>
+    <section className="numbers-section"><div className="eyebrow">{c.numbersKicker}</div><div className="big-number">30<span>тыс.</span></div><p>{c.numbersText}</p><div className="number-foot"><span>Более 2 000</span><span>{c.repairs}</span><span>Около 700</span><span>{c.restored}</span></div></section>
+    <section className="gallery-section" id="gallery"><div className="gallery-heading"><div><div className="eyebrow">{c.galleryKicker}</div><h2>{c.galleryTitle[0]}<br /><em>{c.galleryTitle[1]}</em></h2></div><p>{c.galleryIntro}</p></div><div className="gallery-grid">{photos.map((photo, index) => <figure key={photo.title.ru} className={index === 0 ? "photo-card photo-large" : "photo-card"}><div className="photo-image" style={{ backgroundImage: `url(${photo.src})` }} /><figcaption><span>{photo.note[lang]}</span><strong>{photo.title[lang]}</strong><small>{photo.source}</small></figcaption></figure>)}</div></section>
+    <footer className="footer"><div className="footer-brand"><img src="/manus-storage/nasledie-mark_baadc2fe.png" alt="" className="brand-mark" /><span><b>Наследие</b><small>России</small></span></div><p>{c.footer}</p><div className="footer-meta"><span>© 2026 / РЕДАКЦИОННЫЙ ПРОЕКТ</span><span>{c.footerMeta}</span></div></footer>
+  </main>;
 }
